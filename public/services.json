@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "title":"Personal care",
+        "img":"https://i.ibb.co/n07TXC4/blood-presuure.png",
+        "description":"we are here for give you personal care.and health checking.we have some personal product also which are for your healthy body"
+    },
+    {
+        "id":2,
+        "title":"Blood Pressure check",
+        "img":"https://i.ibb.co/L0ftbJy/bloodpresure.png",
+        "description":"checking blood pressure and secure your health not only blood pressure check your sugar also.we are here for your health checker"
+    },
+    {
+        "id":3,
+        "title":"online service",
+        "img":"https://i.ibb.co/txWfFdw/online.png",
+        "description":"in case of if needs any kind of medicine ,this online shop is always he;p you in moment.just you have to order it"
+    },
+    {
+        "id":4,
+        "title":"Reviewing Medicine",
+        "img":"https://i.ibb.co/56hjy77/reviewing.png",
+        "description":"we quickly review our patient prescription .and give them their required medicine"
+    },
+    {
+        "id":5,
+        "title":"Medicine check",
+        "img":"https://i.ibb.co/GJzzf1K/check.png",
+        "description":"if any person wants to know about any medicine just ask us for your secure."
+    },
+    {
+        "id":6,
+        "title":"Helping in Emergency",
+        "img":"https://i.ibb.co/2PG0prj/emergency.png",
+        "description":"Also we are lunching a special service.if anyone need any medicine in emergency just call us.."
+    }
+]
