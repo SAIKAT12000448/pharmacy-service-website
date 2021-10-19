@@ -26,13 +26,13 @@
     {
         "id":5,
         "title":"Medicine check",
-        "img":"https://i.ibb.co/GJzzf1K/check.png",
+        "img":"https://healthtimes.com.au/administrator/uploads/article_images/Become%20a%20Pharmacist%201618806717.jpg",
         "description":"if any person wants to know about any medicine just ask us for your secure."
     },
     {
         "id":6,
         "title":"Helping in Emergency",
         "img":"https://i.ibb.co/2PG0prj/emergency.png",
-        "description":"Also we are lunching a special service.if anyone need any medicine in emergency just call us.."
+        "description":"Also we are lunching a special service.if anyone need any medicine in emergency just call us."
     }
 ]

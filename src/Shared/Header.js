@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useFirebase from '../Firebase/useFirebase';
-
+import './Header.css'
 const Header = () => {
     const {user,logOut}=useFirebase();
    
     return (
-        <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div className="sticky-top">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <h2 className="navbar-brand mt-2">DATTA PHARMACY</h2>
        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@ const Header = () => {
     <Link to='/register'><button className="bg-white text-dark fw-bold me-3 rounded-pill mx-3">Register</button></Link>
     
   {
-      user?.email &&
+      user?.displayName &&
       
      <button onClick={logOut} className="bg-white text-dark fw-bold me-3 rounded-pill mx-3">Log Out</button>
 

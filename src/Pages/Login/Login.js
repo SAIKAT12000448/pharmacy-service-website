@@ -1,23 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../Firebase/useFirebase';
+
+import useAuth from '../Hooks/useAuth';
+
+
+
 import './Login.css';
 const Login = () => {
-    const{signInusingGoogle,signinusingGithub}=useFirebase();
+    const{signInusingGoogle,signinusingGithub,emailvalue,handlepassword,handleRegister}=useAuth();
     return (
         <div className="container">
             <h1 className="text-center mt-2">Please LogIn!!</h1>
-            <form className=" border p-5 me-auto ms-auto mt-5 form-container">
+            <form onSubmit={handleRegister} className=" border p-5 me-auto ms-auto mt-5 form-container">
   <div className="row mb-3">
     <label htmlFor="inputEmail3" className="col-sm-2 col-form-label fw-bold">Email</label>
     <div className="col-sm-10">
-      <input type="email" className="form-control" id="inputEmail3"/>
+      <input onBlur={emailvalue} type="email" className="form-control" id="inputEmail3"/>
     </div>
   </div>
   <div className="row mb-3">
     <label htmlFor="inputPassword3" className="col-sm-2 col-form-label fw-bold">Password</label>
     <div className="col-sm-10">
-      <input type="password" className="form-control" id="inputPassword3"/>
+      <input onBlur={handlepassword}  type="password" className="form-control" id="inputPassword3"/>
     </div>
   </div>
  <div className="text-center">

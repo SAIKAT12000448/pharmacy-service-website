@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../Firebase/useFirebase';
+
+
+import useAuth from '../Hooks/useAuth';
 import './Register.css'
 
 const Register = () => {
-    const{handleRegister,namevalue,emailvalue,handlepassword,error,islogin,handlecheck}=useFirebase()
+    const{handleRegister,namevalue,emailvalue,handlepassword,error,islogin,handlecheck}=useAuth()
     return (
         <div className="container">
             <h1 className="mt-3 text-center">Please {islogin?'Log In':'Register'}!!</h1>

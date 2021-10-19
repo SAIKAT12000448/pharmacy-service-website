@@ -67,6 +67,7 @@ const handleRegister=e=>{
 const processLogin=(email,password)=>{
     signInWithEmailAndPassword(auth, email, password)
     .then(result=>{
+        console.log(result.user)
         setuser(result.user)
         seterror('')
     })
@@ -78,7 +79,7 @@ const processLogin=(email,password)=>{
 const newRegister=(email,password)=>{
     createUserWithEmailAndPassword(auth, email, password)
     .then(result=>{
-    
+       console.log(result.user)
        setuser(result.user)
         emailVerification()
        newUser()
@@ -87,7 +88,7 @@ const newRegister=(email,password)=>{
     .catch(error=>{
         seterror(error.message)
     })
-    console.log(name,email,password)
+    // console.log(name,email,password)
 }
 const newUser=()=>{
     updateProfile(auth.currentUser, {
