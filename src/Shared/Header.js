@@ -9,7 +9,7 @@ const Header = () => {
         <div className="sticky-top">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <h2 className="navbar-brand mt-2">DATTA PHARMACY</h2>
+        <h2 className="navbar-brand mt-2">PHARMA MEDICO</h2>
        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
         </button>
