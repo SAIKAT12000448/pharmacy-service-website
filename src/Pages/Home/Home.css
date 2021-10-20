@@ -1,0 +1,21 @@
+.banner {
+  background-image: url(../../images/pharmacyBanner2.jpg);
+  height: 650px;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+.font {
+  font-size: 30px;
+  color: rgb(6, 6, 41);
+}
+.font2 {
+  color: rgb(20, 22, 160);
+}
+.medi {
+  color: rgba(201, 26, 26, 0.425);
+}
+.btn-handler {
+  background-color: rgba(36, 68, 17, 0.589);
+  color: rgb(252, 252, 253);
+}
+/*  */

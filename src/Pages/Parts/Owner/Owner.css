@@ -1,0 +1,11 @@
+.owner {
+  background-color: rgba(238, 212, 179, 0.384);
+  border-radius: 20px;
+}
+.image {
+  border-radius: 50px;
+  text-align: center;
+}
+.about {
+  background-color: rgba(255, 127, 8, 0.521);
+}
