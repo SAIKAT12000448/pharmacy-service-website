@@ -10,20 +10,25 @@ const useFirebase=()=>{
     const[email,setemail]=useState('')
     const[password,setpassword]=useState('')
     const[islogin,setislogin]=useState(false)
-    
+    const[isloading,setisloading]=useState(true);
+
+
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const auth = getAuth();
     const signInusingGoogle=()=>{
-        signInWithPopup(auth, googleProvider)
-        .then(result =>{
-            console.log(result.user)
-            setuser(result.user)
-        }).catch(error=>{
+     
+  return   signInWithPopup(auth, googleProvider)
+        
+  .finally(()=>setisloading(false))
+       .catch(error=>{
             seterror(error.message)
+            
         })
+       
     }
     const signinusingGithub=()=>{
+        
         signInWithPopup(auth, githubProvider)
         .then(result=>{
             setuser(result.user)
@@ -32,25 +37,28 @@ const useFirebase=()=>{
         .catch(error=>{
             seterror(error.message)
         })
+        
     }
-  
-
+    
+    
     useEffect(()=>{
         onAuthStateChanged(auth,user =>{
             if(user){
                 setuser(user)
             }
+            
         })
     },[])
-//   logOut
-const logOut=()=>{
-    signOut(auth)
-    .then(()=>{
-        setuser({})
-    })
-}
-
-// Register
+    //   logOut
+    const logOut=()=>{
+        signOut(auth)
+        .then(()=>{
+            setuser({})
+        })
+        .finally(()=>setisloading(false))
+    }
+    
+    // Register
 const handleRegister=e=>{
     e.preventDefault();
 
@@ -71,6 +79,7 @@ const processLogin=(email,password)=>{
         setuser(result.user)
         seterror('')
     })
+    .finally(()=>setisloading(false))
     .catch(error=>{
         seterror(error.message)
     })
@@ -97,6 +106,7 @@ const newUser=()=>{
       .then(()=>{
        
       })
+      .finally(()=>setisloading(false))
      
 }
 
@@ -105,6 +115,7 @@ const emailVerification=()=>{
     .then(result=>{
         console.log(result.user)
     })
+    .finally(()=>setisloading(false))
     .catch(error=>{
         seterror(error.message)
     })
@@ -136,7 +147,8 @@ const handlecheck=e=>{
         email,
         password,islogin,
         handlecheck,
-        signinusingGithub
+        signinusingGithub,
+        isloading,setuser
     }
 
 }

@@ -16,24 +16,39 @@ const Header = () => {
     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
     
       <ul className="navbar-nav  ms-auto mb-2 mt-2 ms-3 mb-lg-0">
-        <li className="nav-item">
+        <li className="nav-item ms-5 mt-3">
         <h5><Link style={{textDecoration:"none"}} to="/home">Home</Link></h5>
         </li>
-        <li className="nav-item ms-5">
+        <li className="nav-item ms-5 mt-3">
         <h5><Link style={{textDecoration:"none"}} to="/services">Services</Link></h5>
+        </li>
+        <li className="nav-item ms-5 mt-3">
+        <h5><Link style={{textDecoration:"none"}} to="/contact">Contact</Link></h5>
+        </li>
+        <li className="nav-item ms-5 mt-3">
+        <h5><Link style={{textDecoration:"none"}} to="/medicines">Medicine</Link></h5>
+        </li>
+        <li className="nav-item me-auto ms-auto mt-3">
+        <Link to='/login'><button className="bg-white text-dark fw-bold me-3 rounded-pill mx-3">Log In</button></Link>
+        </li>
+        <li className="nav-item me-auto ms-auto mt-3">
+        <Link to='/register'><button className="bg-white text-dark fw-bold me-3 rounded-pill mx-3">Register</button></Link>
+        </li>
+        <li className="nav-item me-auto ms-auto mt-3">
+        {
+      user?.displayName &&
+      
+     <button onClick={logOut} className="bg-white text-dark fw-bold  rounded-pill mx-3">Log Out</button>
+
+  }
         </li>
            
       </ul>
    
-    <Link to='/login'><button className="bg-white text-dark fw-bold me-3 rounded-pill mx-3">Log In</button></Link>
-    <Link to='/register'><button className="bg-white text-dark fw-bold me-3 rounded-pill mx-3">Register</button></Link>
     
-  {
-      user?.displayName &&
-      
-     <button onClick={logOut} className="bg-white text-dark fw-bold me-3 rounded-pill mx-3">Log Out</button>
 
-  }
+    
+ 
  
     </div>
   <span className="text-white me-3">{user.displayName}</span>

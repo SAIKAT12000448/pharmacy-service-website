@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link ,useHistory,useLocation} from 'react-router-dom';
 
 import useAuth from '../Hooks/useAuth';
 
@@ -7,7 +7,23 @@ import useAuth from '../Hooks/useAuth';
 
 import './Login.css';
 const Login = () => {
-    const{signInusingGoogle,signinusingGithub,emailvalue,handlepassword,handleRegister}=useAuth();
+  const{signInusingGoogle,signinusingGithub,emailvalue,handlepassword,handleRegister}=useAuth();
+    
+  const location = useLocation();
+  const history =useHistory();
+  const redirect_uri = location.state?.from || '/home'
+  console.log('came from ',location.state?.from);
+
+  const handleGoogleLogin=()=>{
+      signInusingGoogle()
+      .then(result=>{
+      
+        history.push(redirect_uri)
+    })
+  }
+
+
+
     return (
         <div className="container">
             <h1 className="text-center mt-2">Please LogIn!!</h1>
@@ -30,7 +46,7 @@ const Login = () => {
 </form>
     <p className="fs-5 text-center">or</p>
 <div className="text-center mt-3 col-md-12 col-sm-12">
-    <button onClick={signInusingGoogle} className="signin fw-bold"><span className="fs-4 text-danger me-3"><i className="fab fa-google-plus-square"></i></span> <span className="fs-4">Google SignIn</span></button><br />
+    <button onClick={handleGoogleLogin} className="signin fw-bold"><span className="fs-4 text-danger me-3"><i className="fab fa-google-plus-square"></i></span> <span className="fs-4">Google SignIn</span></button><br />
     <button onClick={signinusingGithub} className="signin fw-bold mt-3"><span className="fs-4 text-black me-3"><i className="fab fa-github"></i></span> <span className="fs-4">Github SignIn</span></button>
 <br />
 <div className="mt-4 ">
